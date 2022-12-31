@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+This is a solution to the [Hasob Integrated Services Limited recruitment pre-assessment task](https://github.com/Hasob-Intergrated-Services-Limited/FrontendTask). 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-In the project directory, you can run:
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The challenge
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Build a simple website according to the images found in the task repo
 
-### `npm test`
+- Project should be built with ReactJS
+- Website should be responsive
+- Website should be interactive
+- Task should be completed in 2 weeks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshots
 
-### `npm run build`
+![](src/assets/img/screenshots/1.png)
+![](src/assets/img/screenshots/2.png)
+![](src/assets/img/screenshots/3.png)
+![](src/assets/img/screenshots/4.png)
+![](src/assets/img/screenshots/5.png)
+![](src/assets/img/screenshots/6.png)
+![](src/assets/img/screenshots/7.png)
+![](src/assets/img/screenshots/8.png)
+![](src/assets/img/screenshots/9.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: (https://www.github.com/codegiyu/debt-management)
+- Live Site URL: (https://debt-management.vercel.app)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+I used ReactJS for my build, with TailwindCSS, Zustand for global state management, downloaded icons as SVGs from iconify. I also created a database and a few API routes with ExpressJs and MongoDB for login, register and fetching bonds. That repo can be found at [DMON-Database](https://www.github.com/codegiyu/debt-management-database). 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+With proper state management and passing of props I made the website as interactive as I could make it. The checkout page and the register page should be about the most interactive of the bunch.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I also created a custom dummy bond template for suspense while the bonds data is being fetched.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Built with
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ReactJS
+- TailwindCSS
+- API
+- Zustand
+- CSS custom properties
+- Flexbox
+- Desktop-first workflow
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### What I learned
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I experiences a few firsts during this project. 
 
-### Code Splitting
+- First time creating a suspense dummy to await fetched data instead of some kind of loading screen
+- First time creating working MongoDB database and API routes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+I also deepened my knowledge of working with a few things I'm already familiar with like global state management.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
+- GitHub - [Codegiyu](https://www.github.com/codegiyu)
+- Portfolio - [Codegiyu](https://portfolio-codegiyu.vercel.app)
+- Twitter - [@TheLonerider20](https://www.twitter.com/TheLonerider20)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks to God for giving me the strength to complete this even during the busy holiday period.
