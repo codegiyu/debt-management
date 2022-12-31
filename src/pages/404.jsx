@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const NoPage = () => {
     return (
-        <div className="w-full h-screen bg-body">
+        <div className="w-full h-screen bg-body overflow-hidden">
             <header className="w-full px-4 md:px-8 lg:px-10 xl:px-16">
                 <ErrorBoundary>
                     <Header info={ {page: "404" }} />

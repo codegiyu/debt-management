@@ -6,18 +6,18 @@ import Intro from "../components/Intro";
 
 const Home = () => {
     return (
-        <div className="w-full min-h-screen bg-body">
+        <div className="w-full min-h-screen bg-body overflow-hidden">
             <header className="w-full px-4 md:px-8 lg:px-10 xl:px-16">
                 <ErrorBoundary>
                     <Header info={ {page: "home" }} />
                 </ErrorBoundary>
             </header>
-            <main className="w-full  h-homeMainMob lg:h-homeMain relative">
+            <main className="w-full homeMain relative ">
                 <section className="w-full flex items-center justify-between">
                     <div className="w-[70px] h-7 bg-dark opacity-[70%]"></div>
                     <div className="w-[70px] h-7 bg-primary opacity-[70%]"></div>
                 </section>
-                <section className="w-full h-[85%] absolute bottom-0 left-0 z-[1]">
+                <section className="w-full h-[80%] lg:h-full absolute bottom-0 left-0 z-[1]">
                     <ErrorBoundary>
                         <SlideShow />
                     </ErrorBoundary>

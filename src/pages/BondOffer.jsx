@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ErrorBoundary from "../components/ErrorBoundary";
 import Header from "../components/Header";
 import BondSingle from "../components/BondSingle";
+import BondSuspense from "../components/BondSuspense";
 import angleLeft from "../assets/img/angle-left.svg";
 import angleRight from "../assets/img/angle-right.svg";
 import uuid from "react-uuid";
@@ -88,7 +89,7 @@ const BondOffer = () => {
     }, [bondsArray, allBonds])
 
     return (
-        <div className="w-full min-h-screen bg-body">
+        <div className="w-full min-h-screen bg-body overflow-hidden">
             <header className="w-full px-4 md:px-8 lg:px-10 xl:px-16">
                 <ErrorBoundary>
                     <Header info={ {page: "bond-offer" } } />
@@ -102,7 +103,9 @@ const BondOffer = () => {
                             ? bondsArray.map(
                                 (item) => <ErrorBoundary key={ uuid() }><BondSingle key={ uuid() } obj={allBonds[item]} /></ErrorBoundary>
                                 ) 
-                            : ""
+                            : bondsArray.map(
+                                (item) => <ErrorBoundary key={ uuid() }><BondSuspense key={ uuid() } /></ErrorBoundary>
+                                )
                         }
                         <img src={angleLeft} alt="arrow-left" onClick={ handlePrevItem } className={`w-14 lg:w-20 absolute top-arrowMob lg:top-arrow left-[-30px] 
                             ${arrowIsVisible.left ? "block" : "hidden"} cursor-pointer active:scale-95`} 

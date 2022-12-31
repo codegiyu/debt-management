@@ -12,7 +12,7 @@ const CartSingle = (props) => {
                 <input type="checkbox" name={ id } id="" onChange={ () => handleChange(id) } checked={ isChecked }
                     className="aspect-square w-6 accent-primary" 
                 />
-                <img src={ logo } alt="logo" className="w-[100px] aspect-square" />
+                <img src={ logo } alt="logo" className="w-[50px] md:w-[75px] lg:w-[100px] aspect-square" />
                 <p className="font-bold text-[24px] text-dark hidden md:block">{ name }</p>
             </div>
             <p className="font-bold text-[22px] md:text-[24px] text-dark block md:hidden text-center">{ name }</p>

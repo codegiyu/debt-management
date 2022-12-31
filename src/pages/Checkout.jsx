@@ -167,7 +167,7 @@ const Checkout = () => {
     }
 
     return (
-        <div className="w-full min-h-screen bg-body">
+        <div className="w-full min-h-screen bg-body overflow-hidden">
             <header className="w-full px-4 md:px-8 lg:px-10 xl:px-16">
                 <ErrorBoundary>
                     <Header info={ {page: "checkout" } } />

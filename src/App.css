@@ -6,3 +6,19 @@
 .circle {
     @apply aspect-square rounded-full
 }
+
+.homeMain {
+    min-height: calc(100vh - 90px);
+}
+
+@media only screen and (min-width: 768px) {
+    .homeMain {
+        min-height: calc(100vh - 139px);
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .homeMain {
+        min-height: calc(100vh - 164px);
+    }
+}

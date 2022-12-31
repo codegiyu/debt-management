@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/img/logo.png";
 import heartIcon from "../assets/img/heart.svg";
 import heartFillIcon from "../assets/img/heart-fill.svg";
@@ -18,6 +18,10 @@ const BondSingle = (props) => {
 
     let [currentlyInCart, setCurrentlyInCart] = useState(existsInCart(_id))
     let [currentlyInFavourites, setCurrentlyInFavourites] = useState(existsInFavourites(_id))
+    let [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    let [cardWidth, setCardWidth] = useState("w-[330px]")
+
+    const updateScreenWidth = () => setScreenWidth(window.innerWidth)
 
     const handleCartButton = () => {
         setCurrentlyInCart(!currentlyInCart)
@@ -37,8 +41,31 @@ const BondSingle = (props) => {
         }
     }
 
+    useEffect(() => {
+        window.addEventListener("resize", updateScreenWidth)
+        return () => window.removeEventListener("resize", updateScreenWidth)
+    }, [])
+
+    useEffect(() => {
+        if (screenWidth < 375) {
+            setCardWidth("w-[300px]")
+        } else if (screenWidth >= 375 && screenWidth < 400) {
+            setCardWidth("w-[330px]")
+        } else if (screenWidth >= 400 && screenWidth < 992) {
+            setCardWidth("w-[350px]")
+        } else if (screenWidth >= 992 && screenWidth < 1150) {
+            setCardWidth("w-[300px]")
+        } else if (screenWidth >= 1150 && screenWidth < 1350) {
+            setCardWidth("w-[330px]")
+        } else if (screenWidth >= 1350 && screenWidth < 1480) {
+            setCardWidth("w-[300px]")
+        } else {
+            setCardWidth("w-[330px]")
+        }
+    }, [screenWidth])
+
     return (
-        <div className="w-[330px] h-auto pt-2 pb-8 px-4 font-inter border border-primary rounded-xl">
+        <div className={`${ cardWidth } h-auto pt-2 pb-8 px-4 font-inter border border-primary rounded-xl`}>
             <div className="flex items-center justify-between">
                 <img src={ logo } alt="heart" className="aspect-square w-14" />
                 <p className="px-3 py-2 rounded-[15px] bg-highlight text-muted text-sm font-medium">{ type }</p>
@@ -74,7 +101,7 @@ const BondSingle = (props) => {
                 </div>
             </div>
             <div className="flex items-center justify-end gap-4 mt-8">
-                <button onClick={ handleCartButton } className={`${currentlyInCart ? "px-6" : "px-10"} py-4 rounded bg-primary text-white text-xl
+                <button onClick={ handleCartButton } className={`${currentlyInCart ? "px-6 text-base" : "px-10 text-xl"} py-4 rounded bg-primary text-white 
                     hover:bg-darkPrimary active:scale-95`} 
                 >
                     { currentlyInCart

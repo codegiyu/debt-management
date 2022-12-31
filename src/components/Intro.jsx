@@ -7,10 +7,10 @@ import play from "../assets/img/play.svg";
 const Intro = () => {
     return (
         <div className="w-full font-inter text-darkBlack lg:text-dark">
-            <h1 className="text-[35px] lg:text-[65px] font-normal leading-[120%] tracking-[-0.05em] mb-4">
+            <h1 className="text-[35px] lg:text-[50px] xl:text-[65px] font-normal leading-[120%] tracking-[-0.05em] mb-4">
                 Subscribe to FGN Saving Bond
             </h1>
-            <p className="opacity-80 text-[16px] lg:text-[28px] tracking-tight mb-16">
+            <p className="opacity-80 text-[16px] lg:text-[20px] xl:text-[28px] tracking-tight mb-16">
                 Loan and get paid with interest
             </p>
             <div className="w-full flex gap-8 items-center">

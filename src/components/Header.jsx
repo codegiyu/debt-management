@@ -31,19 +31,19 @@ const Header = (props) => {
     }
 
     return (
-        <div className="header-wrap bg-body w-full pt-4 md:pt-10 pb-6 flex items-center justify-between font-inter relative overflow-hidden">
+        <div className="header-wrap bg-body w-full pt-4 md:pt-10 pb-6 flex items-center justify-between font-inter relative">
             <Link to={"/"}>
                 <div className="logo-wrap flex gap-3 items-center justify-between">
                     <img src={ logo } alt="logo" className="w-[50px] md:w-[75px] lg:w-[100px] aspect-square" />
-                    <p className="uppercase font-bold text-primary hidden md:block">Debt Management Office Nigeria</p>
+                    <p className="uppercase font-bold text-primary hidden md:block lg:w-[200px] xl:w-auto">Debt Management Office Nigeria</p>
                 </div>
             </Link>
             
             { isLoggedIn 
             ?   (
-                    <div className="flex items-center gap-12">
+                    <div className="flex items-center lg:gap-6 xl:gap-12">
                         <nav className=" hidden lg:flex">
-                            <ul className="flex gap-10 text-xl font-medium">
+                            <ul className="flex gap-5 xl:gap-10 lg:text-lg xl:text-xl font-medium">
                                 <li>
                                     <Link to="/bond-offer">
                                         <p className={`${ page === "bond-offer" ? "text-dark" : "text-darkFaded" }`}>Bond Offer</p>
@@ -61,13 +61,13 @@ const Header = (props) => {
                                 </li>
                             </ul>
                         </nav>
-                        <div className="items-center gap-24 hidden lg:flex">
+                        <div className="items-center gap-12 xl:gap-24 hidden lg:flex">
                             <button onClick={ handleLogout } className="border-none outline-none bg-transparent">
-                                <img src={ userIcon } alt="cart" className="aspect-square w-14" />
+                                <img src={ userIcon } alt="cart" className="aspect-square lg:w-10 xl:w-14" />
                             </button>
                             <div className="relative">
                                 <Link to={"/checkout"}>
-                                    <img src={ cartIcon } alt="cart" className="aspect-square w-14" />
+                                    <img src={ cartIcon } alt="cart" className="aspect-square lg:w-10 xl:w-14" />
                                 </Link>
                                 <div className={`absolute top-[5px] right-[2px] circle w-5 ${numberInCart ? "flex": "hidden"} justify-center 
                                     items-center bg-red`}
@@ -85,9 +85,9 @@ const Header = (props) => {
                     </div>
                 )
             :   (
-                    <div className="flex items-center gap-16">
+                    <div className="flex items-center lg:gap-8 xl:gap-12">
                         <nav className=" hidden lg:flex">
-                            <ul className="flex gap-10 text-xl font-medium">
+                            <ul className="flex lg:gap-5 xl:gap-8 lg:text-lg xl:text-xl font-medium">
                                 <li>
                                     <Link to="/bond-offer">
                                         <p className={`text-dark ${ page === "bond-offer" ? "font-bold" : "" }`}>Bond Offer</p>
@@ -105,13 +105,13 @@ const Header = (props) => {
                                 </li>
                             </ul>
                         </nav>
-                        <div className={`items-center gap-16 hidden lg:flex ${ page === "login" || page === "register" ? "pr-[220px]" : "" }`}>
+                        <div className={`items-center lg:gap-8 xl:gap-12 hidden lg:flex ${ page === "login" || page === "register" ? "pr-[110px]" : "" }`}>
                             {
                                 page === "login"
                              ? ""
                              :  (
                                 <Link to={"/login"}>
-                                    <button className="font-medium text-xl text-primary w-[150px] py-4 border border-primary rounded-[5px]">
+                                    <button className="font-medium text-xl text-primary w-[110px] xl:w-[130px] py-2 xl:py-3 border border-primary rounded-[5px]">
                                         Login
                                     </button>
                                 </Link>
@@ -122,7 +122,7 @@ const Header = (props) => {
                              ?  ""
                              :  (
                                 <Link to={"/register"}>
-                                    <button className="font-medium text-xl text-white w-[150px] py-4 bg-black border border-black rounded-[5px]">
+                                    <button className="font-medium text-xl text-white w-[110px] xl:w-[130px] py-2 xl:py-3 bg-black border border-black rounded-[5px]">
                                         Sign Up
                                     </button>
                                 </Link>
@@ -130,7 +130,7 @@ const Header = (props) => {
                             }
                             <div className="relative">
                                 <Link to={"/checkout"}>
-                                    <img src={ cartIcon } alt="cart" className="aspect-square w-14" />
+                                    <img src={ cartIcon } alt="cart" className="aspect-square lg:w-10 xl:w-14" />
                                 </Link>
                                 <div className={`absolute top-[5px] right-[2px] circle w-5 ${numberInCart ? "flex": "hidden"} justify-center 
                                     items-center bg-red`}
@@ -150,23 +150,23 @@ const Header = (props) => {
             }
             { isLoggedIn
             ?   (
-                    <div className={`${menuIsOpen ? "translate-x-0" : "translate-x-[100vw]"} h-auto transition-all absolute w-screen 
-                        -left-4 md:-left-8 lg:-left-10 xl:-left-16 top-[90px] md:top-[139px] bg-darkPrimary z-[999] px-4 md:px-8 text-white`}
+                    <div className={`${menuIsOpen ? "translate-x-0" : "translate-x-[100vw]"} transition-all absolute w-screen 
+                        -left-4 md:-left-8 lg:-left-10 xl:-left-16 top-[90px] md:top-[139px] bg-primary z-[999] px-4 md:px-8 text-white`}
                     >
                         <p className="uppercase font-bold text-sm my-6">Debt Management Office Nigeria</p>
                         <nav className="flex w-full">
                             <ul className="flex flex-col text-base font-medium w-full">
-                                <li className="py-2 my-6 border-b border-white w-full">
+                                <li className="py-1 my-4 ">
                                     <Link to="/bond-offer">
                                         <p className={`${ page === "bond-offer" ? "" : "" }`}>Bond Offer</p>
                                     </Link>
                                 </li>
-                                <li className="py-2 my-6 border-b border-white w-full">
+                                <li className="py-1 my-4 ">
                                     <Link to="#">
                                         <p className="">Portfolio</p>
                                     </Link>
                                 </li>
-                                <li className="py-2 my-6 border-b border-white w-full">
+                                <li className="py-1 my-4 ">
                                     <Link to="#">
                                         <p className="">Notification</p>
                                     </Link>
@@ -192,35 +192,35 @@ const Header = (props) => {
                 )
             :   (
                     <div className={`${menuIsOpen ? "translate-x-0" : "translate-x-[100vw]"} h-auto transition-all absolute w-screen 
-                        -left-4 md:-left-8 lg:-left-10 xl:-left-16 top-[90px] md:top-[139px] bg-darkPrimary z-[999] px-4 md:px-8 text-white`}
+                        -left-4 md:-left-8 lg:-left-10 xl:-left-16 top-[90px] md:top-[139px] bg-primary z-[999] px-4 md:px-8 text-white`}
                     >
                         <p className="uppercase font-bold text-sm my-6">Debt Management Office Nigeria</p>
                         <nav className="flex w-full">
                             <ul className="flex flex-col text-base font-medium w-full">
-                                <li className="py-2 my-6 border-b border-white w-full">
+                                <li className="py-1 my-4 ">
                                     <Link to="/bond-offer">
                                         <p className={`${ page === "bond-offer" ? "font-bold" : "" }`}>Bond Offer</p>
                                     </Link>
                                 </li>
-                                <li className="py-2 my-6 border-b border-white w-full">
+                                <li className="py-1 my-4 ">
                                     <Link to="#">
                                         <p className="">DMO</p>
                                     </Link>
                                 </li>
-                                <li className="py-2 my-6 border-b border-white w-full">
+                                <li className="py-1 my-4 ">
                                     <Link to="#">
                                         <p className="">Features</p>
                                     </Link>
                                 </li>
                             </ul>
                         </nav>
-                        <div className={`items-center gap-16 flex justify-between w-full my-6 `}>
+                        <div className={`items-center flex justify-between w-full my-6 `}>
                             {
                                 page === "login"
                              ? ""
                              :  (
                                 <Link to={"/login"}>
-                                    <button className="font-medium text-xl text-primary w-[150px] py-4 border border-primary rounded-[5px]">
+                                    <button className="font-medium text-sm md:text-base text-white w-[100px] py-2 border border-white rounded-[5px]">
                                         Login
                                     </button>
                                 </Link>
@@ -231,18 +231,15 @@ const Header = (props) => {
                              ?  ""
                              :  (
                                 <Link to={"/register"}>
-                                    <button className="font-medium text-xl text-white w-[150px] py-4 bg-black border border-black rounded-[5px]">
+                                    <button className="font-medium text-sm md:text-base text-white w-[100px] py-2 bg-black border border-black rounded-[5px]">
                                         Sign Up
                                     </button>
                                 </Link>
                                 )
                             }
-                            
-                        </div>
-                        <div className="w-full flex justify-end">
                             <div className="relative">
                                 <Link to={"/checkout"}>
-                                    <img src={ cartIconWhite } alt="cart" className="aspect-square w-14" />
+                                    <img src={ cartIconWhite } alt="cart" className="aspect-square w-10" />
                                 </Link>
                                 <div className={`absolute top-[5px] right-[2px] circle w-5 ${numberInCart ? "flex": "hidden"} justify-center 
                                     items-center bg-red`}
@@ -250,6 +247,9 @@ const Header = (props) => {
                                     <p className="text-white text-xs">{ numberInCart }</p>
                                 </div>
                             </div>
+                            
+                        </div>
+                        <div className="w-full flex justify-end px-4 md:px-8 my-6">
                         </div>
                     </div>
                 )
