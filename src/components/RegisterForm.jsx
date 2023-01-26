@@ -216,17 +216,17 @@ const RegisterForm = () => {
         if (result.message) {
             setValues(initialValues)
             setIsLoading(false)
-            setNewAlert(result.message)
+            setNewAlert({ message: result.message, alertType: "success"})
             navigate("/login", {replace: true})
         } else if (result.error) {
             setValues(initialValues)
             setHasError(initialBooleans)
-            setNewAlert(result.error)
+            setNewAlert({ message: result.error, alertType: "error"})
             setIsLoading(false)
         } else {
             setValues(initialValues)
             setHasError(initialBooleans)
-            setNewAlert(`Some error occured. Please try again`)
+            setNewAlert({ message:`Some error occured. Please try again`, alertType: "error"})
             setIsLoading(false)
         }
     }

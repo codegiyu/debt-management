@@ -4,8 +4,12 @@ import { persist } from "zustand/middleware";
 
 const useAlertStore = create(persist((set,get) => ({
     alert: "",
-    setNewAlert: (string) => set(() => (
-        { alert: string }
+    alertType: "",
+    setNewAlert: ({message, type}) => set(() => (
+        { alert: message, alertType: type }
+    )),
+    clearAlert: () => set(() => (
+        { alert: "", alertType: "" }
     )),
 }),
     {

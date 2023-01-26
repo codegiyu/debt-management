@@ -6,6 +6,7 @@ import BondSuspense from "../components/BondSuspense";
 import angleLeft from "../assets/img/angle-left.svg";
 import angleRight from "../assets/img/angle-right.svg";
 import uuid from "react-uuid";
+import BONDS from "../data/data";
 
 
 
@@ -38,15 +39,16 @@ const BondOffer = () => {
     }
 
     useEffect(() => {
-        const getBonds = async () => {
-            let result = await fetch("https://dmon-database.onrender.com/api/bonds/all-bonds")
-            let obj = await result.text()
-            obj = JSON.parse(obj)
-            console.log(obj)
-            let bonds = obj.data
-            setAllBonds(bonds)
-        }
-        getBonds()
+        // const getBonds = async () => {
+        //     let result = await fetch("https://dmon-database.onrender.com/api/bonds/all-bonds")
+        //     let obj = await result.text()
+        //     obj = JSON.parse(obj)
+        //     console.log(obj)
+        //     let bonds = obj.data
+        //     setAllBonds(bonds)
+        // }
+        // getBonds()
+        setAllBonds(BONDS)
     }, [])
 
     useEffect(() => {

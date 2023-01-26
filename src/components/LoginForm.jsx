@@ -109,17 +109,17 @@ const LoginForm = () => {
             setIsLoading(false)
             setUser(result.user)
             setIsLoggedIn(true)
-            setNewAlert("Logged in successfully")
+            setNewAlert({ message: "Logged in successfully", alertType: "success" })
             navigate("/", {replace: true})
         } else if (result.error) {
             setValues(initialValues)
             setHasError(initialBooleans)
-            setNewAlert(result.error)
+            setNewAlert({ message: result.error, alertType: "error"})
             setIsLoading(false)
         } else {
             setValues(initialValues)
             setHasError(initialBooleans)
-            setNewAlert(`Some error occured. Please try again`)
+            setNewAlert({ message:`Some error occured. Please try again`, alertType: "error"})
             setIsLoading(false)
         }
     }

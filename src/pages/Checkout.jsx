@@ -8,6 +8,7 @@ import uuid from "react-uuid";
 import { useNavigate } from "react-router-dom";
 import loading from "../assets/img/loading.svg";
 import useAlertStore from "../store/alertStore";
+import useUserStore from "../store/userStore";
 
 
 const Checkout = () => {
@@ -15,6 +16,7 @@ const Checkout = () => {
     const removeFromCart = useCartStore(state => state.removeFromCart)
     const removeAllFromCart = useCartStore(state => state.removeAllFromCart)
     const setNewAlert = useAlertStore(state => state.setNewAlert)
+    const isLoggedIn = useUserStore(state => state.isLoggedIn)
 
     let navigate = useNavigate()
 
@@ -115,6 +117,11 @@ const Checkout = () => {
     }, [])
 
     const handleCheckout = () => {
+        if (!isLoggedIn) {
+            setNewAlert({ message: "You have to log in to make purchases", alertType: "error"})
+            return
+        }
+
         let numberInCart = cartArr.reduce((acc, curr) => acc + curr.numberOfItems ,0)
         let item = numberInCart === 1 ? "item" : "items"
 
@@ -122,7 +129,7 @@ const Checkout = () => {
         setTimeout(() => {
             removeAllFromCart()
             navigate("/")
-            setNewAlert(`Congratulations! You have just purchased ${numberInCart} ${item}.`)
+            setNewAlert({ message: `Congratulations! You have just purchased ${numberInCart} ${item}.`, alertType: "success"})
         }, 2000)
     }
 
